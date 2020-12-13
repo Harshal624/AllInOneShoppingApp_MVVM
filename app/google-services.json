@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "517348836576",
+    "project_id": "all-in-one-shopping-app-120b0",
+    "storage_bucket": "all-in-one-shopping-app-120b0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:517348836576:android:742636ed6ac01aea323c85",
+        "android_client_info": {
+          "package_name": "ace.infosolutions.allinoneshoppingapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "517348836576-rtn61276pfu1rql0i2hrhipo1dsvi8g5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDG2jbudKQgauYjc5Ss4N3lAsfiE2FrZgo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "517348836576-rtn61276pfu1rql0i2hrhipo1dsvi8g5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

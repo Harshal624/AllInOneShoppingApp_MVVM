@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/ic_baseline_home_24"
+            android:title="@string/menu_home" />
+        <item
+            android:id="@+id/nav_bookmarks"
+            android:icon="@drawable/ic_baseline_bookmarks_24"
+            android:title="Bookmarks" />
+
+    </group>
+
+    <item android:title="Categories">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/general_shopping"
+                    android:icon="@drawable/generalshoppingicon"
+                    android:title="General Shopping" />
+
+                <item
+                    android:id="@+id/parcel"
+                    android:icon="@drawable/fashionicon"
+                    android:title="Fashion" />
+                <item
+                    android:id="@+id/cust_history"
+                    android:icon="@drawable/groceryfoodicon"
+                    android:title="@string/grocery_food" />
+
+                <item
+                    android:id="@+id/parcel_history"
+                    android:icon="@drawable/othericon"
+                    android:title="Others" />
+            </group>
+        </menu>
+    </item>
+
+    <item android:title="Social">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/share_app"
+                    android:icon="@drawable/ic_baseline_share_24"
+                    android:title="Share App" />
+                <item
+                    android:id="@+id/rate_app"
+                    android:icon="@drawable/ic_baseline_star_rate_24"
+                    android:title="Rate Us" />
+
+            </group>
+        </menu>
+    </item>
+
+
+    <item android:title="Contact">
+        <menu>
+            <group android:checkableBehavior="single">
+
+                <item
+                    android:id="@+id/privacy_policy"
+                    android:title="Privacy Policy" />
+                <item
+                    android:id="@+id/developer_contact"
+                    android:title="Contact us" />
+
+            </group>
+        </menu>
+    </item>
+
+</menu>
