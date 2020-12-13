@@ -32,10 +32,11 @@
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/home_side_margin"
             android:layout_marginTop="20dp"
+            android:layout_marginEnd="@dimen/home_side_margin"
             app:cardCornerRadius="10dp"
-            app:cardElevation="5dp"
-            >
+            app:cardElevation="5dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -51,10 +52,10 @@
                         android:id="@+id/textView2"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
-                        android:layout_marginStart="20dp"
                         android:fontFamily="@font/roboto"
                         android:text="Top Sites"
                         android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent" />
 
                     <ImageButton
@@ -66,51 +67,48 @@
                         android:src="@drawable/ic_baseline_more_black"
                         app:layout_constraintEnd_toEndOf="parent" />
 
+                    <ImageView
+                        android:id="@+id/iv_AmazonTopSites"
+                        android:layout_width="0dp"
+                        android:layout_height="80dp"
+                        android:layout_marginTop="20dp"
+                        android:src="@drawable/amazonlogo"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/textView2"
+                        app:layout_constraintWidth_default="percent"
+                        app:layout_constraintWidth_percent="0.3" />
+
+
+                    <ImageView
+                        android:id="@+id/iv_FlipkartTopSites"
+                        android:layout_width="0dp"
+                        android:layout_height="100dp"
+                        android:layout_marginTop="20dp"
+                        android:src="@drawable/flipkartlogo"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@id/iv_MyntraTopSites"
+                        app:layout_constraintStart_toEndOf="@id/iv_AmazonTopSites"
+                        app:layout_constraintTop_toBottomOf="@id/textView2"
+                        app:layout_constraintWidth_default="percent"
+                        app:layout_constraintWidth_percent="0.3" />
+
+                    <ImageView
+                        android:id="@+id/iv_MyntraTopSites"
+                        android:layout_width="0dp"
+                        android:layout_height="100dp"
+                        android:layout_marginTop="20dp"
+                        android:src="@drawable/myntralogo"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/textView2"
+                        app:layout_constraintWidth_default="percent"
+                        app:layout_constraintWidth_percent="0.3" />
+
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-                <HorizontalScrollView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/home_side_margin"
-                    android:layout_marginTop="20dp">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal">
-
-                        <ImageView
-                            android:id="@+id/iv_amazon"
-                            android:layout_width="100dp"
-                            android:layout_height="80dp"
-                            android:layout_gravity="center"
-                            android:src="@drawable/amazonlogo" />
-
-                        <ImageView
-                            android:id="@+id/iv_flipkart"
-                            android:layout_width="100dp"
-                            android:layout_height="120dp"
-                            android:layout_marginStart="20dp"
-                            android:src="@drawable/flipkartlogo" />
-
-                        <ImageView
-                            android:id="@+id/iv_myntra"
-                            android:layout_width="100dp"
-                            android:layout_height="120dp"
-                            android:layout_marginStart="20dp"
-                            android:src="@drawable/myntralogo" />
-
-                        <ImageView
-                            android:id="@+id/iv_snapdeal"
-                            android:layout_width="100dp"
-                            android:layout_height="120dp"
-                            android:layout_marginStart="20dp"
-                            android:src="@drawable/snapdeallogo" />
-                    </LinearLayout>
-
-                </HorizontalScrollView>
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
@@ -118,7 +116,9 @@
             android:id="@+id/cv_Bookmarks"
             android:layout_width="match_parent"
             android:layout_height="100dp"
+            android:layout_marginStart="@dimen/home_side_margin"
             android:layout_marginTop="20dp"
+            android:layout_marginEnd="@dimen/home_side_margin"
             android:background="@drawable/custom_border2"
             app:cardCornerRadius="20dp"
             app:cardElevation="3dp">
@@ -187,7 +187,9 @@
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/home_side_margin"
             android:layout_marginTop="20dp"
+            android:layout_marginEnd="@dimen/home_side_margin"
             android:background="@drawable/custom_border2"
             app:cardBackgroundColor="@color/app_green_color"
             app:cardCornerRadius="20dp"
@@ -246,11 +248,7 @@
                             android:id="@+id/tv_AmazonDailyDeals"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:background="@drawable/rounded_corners"
-                            android:scaleType="fitXY"
-                            android:src="@drawable/amazondailydealslogo"
-
-                            />
+                            android:background="@drawable/rounded_corners" />
 
 
                     </androidx.cardview.widget.CardView>
@@ -271,9 +269,7 @@
                             android:layout_height="match_parent"
                             android:background="@drawable/rounded_corners"
                             android:scaleType="fitXY"
-                            android:src="@drawable/flipkartdailydealslogo"
-
-                            />
+                            android:src="@drawable/flipkartdailydealslogo" />
 
                     </androidx.cardview.widget.CardView>
                 </androidx.constraintlayout.widget.ConstraintLayout>
@@ -298,7 +294,6 @@
                             android:id="@+id/iv_AmazonGenShopping"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
-                            android:src="@drawable/amazonlogo"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent"
@@ -308,7 +303,6 @@
                             android:id="@+id/iv_FlipkartGenShopping"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
-                            android:src="@drawable/flipkartlogo"
                             app:layout_constraintEnd_toStartOf="@+id/iv_SnapdealGenShopping"
                             app:layout_constraintStart_toEndOf="@+id/iv_AmazonGenShopping"
                             app:layout_constraintWidth_percent="0.32" />
@@ -317,7 +311,6 @@
                             android:id="@+id/iv_SnapdealGenShopping"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
-                            android:src="@drawable/snapdeallogo"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintTop_toTopOf="parent"
@@ -332,7 +325,9 @@
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/home_side_margin"
             android:layout_marginTop="20dp"
+            android:layout_marginEnd="@dimen/home_side_margin"
             android:background="@drawable/custom_border2"
             app:cardBackgroundColor="#ff64b6"
             app:cardCornerRadius="20dp"
@@ -392,7 +387,6 @@
                             android:id="@+id/iv_MyntraaFashion"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
-                            android:src="@drawable/myntralogo"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent"
@@ -402,7 +396,6 @@
                             android:id="@+id/iv_NykaaFashion"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
-                            android:src="@drawable/nykaalogo"
                             app:layout_constraintEnd_toStartOf="@+id/iv_TataCliqFashion"
                             app:layout_constraintStart_toEndOf="@+id/iv_MyntraaFashion"
                             app:layout_constraintWidth_percent="0.3" />
@@ -412,7 +405,6 @@
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_marginEnd="5dp"
-                            android:src="@drawable/zaralogo"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintTop_toTopOf="parent"
@@ -427,7 +419,9 @@
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/home_side_margin"
             android:layout_marginTop="20dp"
+            android:layout_marginEnd="@dimen/home_side_margin"
             android:background="@drawable/custom_border2"
             app:cardBackgroundColor="#a44d08"
             app:cardCornerRadius="20dp"
@@ -487,7 +481,6 @@
                             android:id="@+id/iv_SwiggyGrocFood"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
-                            android:src="@drawable/swiggylogo"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent"
@@ -497,7 +490,6 @@
                             android:id="@+id/iv_KFCGrocFood"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
-                            android:src="@drawable/kfclogo"
                             app:layout_constraintEnd_toStartOf="@+id/iv_LiciousGrocFood"
                             app:layout_constraintStart_toEndOf="@+id/iv_SwiggyGrocFood"
                             app:layout_constraintWidth_percent="0.3" />
@@ -507,7 +499,6 @@
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_marginEnd="5dp"
-                            android:src="@drawable/liciouslogo"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintTop_toTopOf="parent"
@@ -522,11 +513,12 @@
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="150dp"
-            android:layout_marginTop="20dp"
             android:layout_marginStart="@dimen/home_side_margin"
+            android:layout_marginTop="20dp"
             android:layout_marginEnd="@dimen/home_side_margin"
             android:background="@drawable/custom_border2"
             app:cardCornerRadius="20dp"
+
             app:cardElevation="3dp">
 
             <androidx.constraintlayout.widget.ConstraintLayout
@@ -549,8 +541,6 @@
                     android:layout_width="0dp"
                     android:layout_height="80dp"
                     android:layout_marginStart="@dimen/home_side_margin"
-                    android:scaleType="fitXY"
-                    android:src="@drawable/shoppersstoplogo"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/tv_Others"
@@ -561,7 +551,6 @@
                     android:id="@+id/iv_SamsungOthers"
                     android:layout_width="0dp"
                     android:layout_height="80dp"
-                    android:src="@drawable/samsunglogo"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toStartOf="@id/iv_WishOthers"
                     app:layout_constraintStart_toEndOf="@id/iv_ShoppersStopOthers"
@@ -574,7 +563,6 @@
                     android:layout_width="0dp"
                     android:layout_height="80dp"
                     android:layout_marginEnd="@dimen/home_side_margin"
-                    android:src="@drawable/wishlogo"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/tv_Others"

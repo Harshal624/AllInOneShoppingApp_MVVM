@@ -9,7 +9,7 @@
         android:id="@+id/nav_home"
         android:name="ace.infosolutions.allinoneshoppingapp.ui.Fragment.HomeFragment"
         android:label="@string/menu_home"
-        tools:layout="@layout/fragment_home" >
+        tools:layout="@layout/fragment_home">
         <action
             android:id="@+id/action_nav_home_to_nav_bookmarks"
             app:destination="@id/nav_bookmarks" />
@@ -17,24 +17,69 @@
             android:id="@+id/action_nav_home_to_webViewFragment"
             app:destination="@id/webViewFragment" />
         <action
-            android:id="@+id/action_nav_home_to_shoppingTypeFragment"
-            app:destination="@id/shoppingTypeFragment" />
+            android:id="@+id/action_nav_home_to_resultListFragment"
+            app:destination="@id/resultListFragment" />
+        <action
+            android:id="@+id/action_nav_home_to_genShoppingFragment"
+            app:destination="@id/genShoppingFragment" />
+        <action
+            android:id="@+id/action_nav_home_to_fashionFragment"
+            app:destination="@id/fashionFragment" />
+        <action
+            android:id="@+id/action_nav_home_to_groceryFoodFragment"
+            app:destination="@id/groceryFoodFragment" />
+        <action
+            android:id="@+id/action_nav_home_to_othersFragment"
+            app:destination="@id/othersFragment" />
     </fragment>
 
     <fragment
         android:id="@+id/nav_bookmarks"
         android:name="ace.infosolutions.allinoneshoppingapp.ui.Fragment.BookmarkFragment"
         android:label="Bookmarks"
-        tools:layout="@layout/fragment_bookmark" />
+        tools:layout="@layout/fragment_bookmark">
+        <action
+            android:id="@+id/action_nav_bookmarks_to_webViewFragment"
+            app:destination="@id/webViewFragment" />
+    </fragment>
     <fragment
         android:id="@+id/webViewFragment"
         android:name="ace.infosolutions.allinoneshoppingapp.ui.Fragment.WebViewFragment"
         android:label="fragment_web_view"
         tools:layout="@layout/fragment_web_view" />
     <fragment
-        android:id="@+id/shoppingTypeFragment"
-        android:name="ace.infosolutions.allinoneshoppingapp.ui.Fragment.ShoppingTypeFragment"
-        android:label="fragment_shopping_type"
-        tools:layout="@layout/fragment_shopping_type" />
+        android:id="@+id/resultListFragment"
+        android:name="ace.infosolutions.allinoneshoppingapp.ui.Fragment.ResultListFragment"
+        android:label="{title}"
+        tools:layout="@layout/fragment_resultlist">
+        <action
+            android:id="@+id/action_resultListFragment_to_webViewFragment"
+            app:destination="@id/webViewFragment" />
+        <argument
+            android:name="title"
+            android:defaultValue="Home"
+            app:argType="string" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/genShoppingFragment"
+        android:name="ace.infosolutions.allinoneshoppingapp.ui.Fragment.GenShoppingFragment"
+        android:label="General Shopping"
+        tools:layout="@layout/fragment_gen_shopping" />
+    <fragment
+        android:id="@+id/fashionFragment"
+        android:name="ace.infosolutions.allinoneshoppingapp.ui.Fragment.FashionFragment"
+        android:label="Fashion"
+        tools:layout="@layout/fragment_fashion" />
+    <fragment
+        android:id="@+id/groceryFoodFragment"
+        android:name="ace.infosolutions.allinoneshoppingapp.ui.Fragment.GroceryFoodFragment"
+        android:label="@string/grocery_food"
+        tools:layout="@layout/fragment_grocery_food" />
+    <fragment
+        android:id="@+id/othersFragment"
+        android:name="ace.infosolutions.allinoneshoppingapp.ui.Fragment.OthersFragment"
+        android:label="Others"
+        tools:layout="@layout/fragment_others" />
 
 </navigation>

@@ -31,4 +31,5 @@ public class BookmarkFragment extends Fragment {
         });
         return root;
     }
+
 }
