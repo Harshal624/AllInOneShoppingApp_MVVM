@@ -53,21 +53,6 @@ public class WebViewFragment extends Fragment {
         binding.webview.getSettings().setJavaScriptEnabled(true);
         binding.webview.loadUrl(website.getUrl());
         binding.webview.setWebViewClient(new WebViewClient());
-/*
-        binding.webview.setOnKeyListener((view, i, keyEvent) -> {
-            if(keyEvent.getAction() == KeyEvent.ACTION_DOWN){
-                WebView webView = (WebView) view;
-                switch (i) {
-                    case KeyEvent.KEYCODE_BACK:
-                        if (webView.canGoBack()) {
-                            webView.goBack();
-                            return true;
-                        }
-                        break;
-                }
-            }
-            return false;
-        });*/
     }
 
     @Override
@@ -75,29 +60,4 @@ public class WebViewFragment extends Fragment {
         super.onDestroyView();
         binding = null;
     }
-
-
-    /*
-
-
-        webView.setOnKeyListener(new View.OnKeyListener() {
-            @Override
-            public boolean onKey(View view, int i, KeyEvent keyEvent) {
-                if (keyEvent.getAction() == KeyEvent.ACTION_DOWN) {
-                    WebView webView = (WebView) view;
-
-                    switch (i) {
-                        case KeyEvent.KEYCODE_BACK:
-                            if (webView.canGoBack()) {
-                                webView.goBack();
-                                return true;
-                            }
-                            break;
-                    }
-                }
-
-                return false;
-            }
-        });*/
-
 }
