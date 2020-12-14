@@ -19,21 +19,21 @@
         <menu>
             <group android:checkableBehavior="single">
                 <item
-                    android:id="@+id/general_shopping"
+                    android:id="@+id/genShoppingFragment"
                     android:icon="@drawable/generalshoppingicon"
                     android:title="General Shopping" />
 
                 <item
-                    android:id="@+id/parcel"
+                    android:id="@+id/fashionFragment"
                     android:icon="@drawable/fashionicon"
                     android:title="Fashion" />
                 <item
-                    android:id="@+id/cust_history"
+                    android:id="@+id/groceryFoodFragment"
                     android:icon="@drawable/groceryfoodicon"
                     android:title="@string/grocery_food" />
 
                 <item
-                    android:id="@+id/parcel_history"
+                    android:id="@+id/othersFragment"
                     android:icon="@drawable/othericon"
                     android:title="Others" />
             </group>

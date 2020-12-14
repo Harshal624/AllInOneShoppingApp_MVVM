@@ -45,8 +45,16 @@
     <fragment
         android:id="@+id/webViewFragment"
         android:name="ace.infosolutions.allinoneshoppingapp.ui.Fragment.WebViewFragment"
-        android:label="fragment_web_view"
-        tools:layout="@layout/fragment_web_view" />
+        android:label="{title}"
+        tools:layout="@layout/fragment_web_view">
+        <argument
+            android:name="website"
+            app:argType="ace.infosolutions.allinoneshoppingapp.model.Website"
+            app:nullable="true" />
+        <argument
+            android:name="title"
+            app:argType="string" />
+    </fragment>
     <fragment
         android:id="@+id/resultListFragment"
         android:name="ace.infosolutions.allinoneshoppingapp.ui.Fragment.ResultListFragment"
@@ -65,21 +73,37 @@
         android:id="@+id/genShoppingFragment"
         android:name="ace.infosolutions.allinoneshoppingapp.ui.Fragment.GenShoppingFragment"
         android:label="General Shopping"
-        tools:layout="@layout/fragment_gen_shopping" />
+        tools:layout="@layout/fragment_gen_shopping">
+        <action
+            android:id="@+id/action_genShoppingFragment_to_webViewFragment"
+            app:destination="@id/webViewFragment" />
+    </fragment>
     <fragment
         android:id="@+id/fashionFragment"
         android:name="ace.infosolutions.allinoneshoppingapp.ui.Fragment.FashionFragment"
         android:label="Fashion"
-        tools:layout="@layout/fragment_fashion" />
+        tools:layout="@layout/fragment_fashion">
+        <action
+            android:id="@+id/action_fashionFragment_to_webViewFragment"
+            app:destination="@id/webViewFragment" />
+    </fragment>
     <fragment
         android:id="@+id/groceryFoodFragment"
         android:name="ace.infosolutions.allinoneshoppingapp.ui.Fragment.GroceryFoodFragment"
         android:label="@string/grocery_food"
-        tools:layout="@layout/fragment_grocery_food" />
+        tools:layout="@layout/fragment_grocery_food">
+        <action
+            android:id="@+id/action_groceryFoodFragment_to_webViewFragment"
+            app:destination="@id/webViewFragment" />
+    </fragment>
     <fragment
         android:id="@+id/othersFragment"
         android:name="ace.infosolutions.allinoneshoppingapp.ui.Fragment.OthersFragment"
         android:label="Others"
-        tools:layout="@layout/fragment_others" />
+        tools:layout="@layout/fragment_others">
+        <action
+            android:id="@+id/action_othersFragment_to_webViewFragment"
+            app:destination="@id/webViewFragment" />
+    </fragment>
 
 </navigation>

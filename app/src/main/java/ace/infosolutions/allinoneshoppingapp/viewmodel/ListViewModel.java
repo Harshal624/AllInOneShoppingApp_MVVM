@@ -9,18 +9,34 @@ import ace.infosolutions.allinoneshoppingapp.model.Website;
 import ace.infosolutions.allinoneshoppingapp.repo.ListRepo;
 
 public class ListViewModel extends ViewModel {
-    private LiveData<List<Website>> topwebsitesLiveData;
+    private LiveData<List<Website>> mTopWebLiveData;
+    private LiveData<List<Website>> mGenShopWebLiveData;
+
     private ListRepo repo;
 
     public ListViewModel() {
         repo = ListRepo.getInstance();
-        if (topwebsitesLiveData == null) {
+    }
+
+    public void initTopWebsites() {
+        if (mTopWebLiveData == null) {
             repo.retrieveTopWebSites();
-            topwebsitesLiveData = repo.getTopWebSites();
+            mTopWebLiveData = repo.getTopWebSites();
+        }
+    }
+
+    public void initGenShopWebsites() {
+        if (mGenShopWebLiveData == null) {
+            repo.retrieveGenShopWebsites();
+            mGenShopWebLiveData = repo.getGenShopwebsites();
         }
     }
 
     public LiveData<List<Website>> getTopWebSites() {
-        return topwebsitesLiveData;
+        return mTopWebLiveData;
+    }
+
+    public LiveData<List<Website>> getGenShoppingWebsites() {
+        return mGenShopWebLiveData;
     }
 }

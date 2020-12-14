@@ -89,28 +89,3 @@ public class HomeFragment extends Fragment {
     }
 
 }
-
-/*
-        webView.getSettings().setJavaScriptEnabled(true);
-        webView.loadUrl("https://www.flipkart.com/");
-        webView.setWebViewClient(new WebViewClient());
-
-        webView.setOnKeyListener(new View.OnKeyListener() {
-            @Override
-            public boolean onKey(View view, int i, KeyEvent keyEvent) {
-                if (keyEvent.getAction() == KeyEvent.ACTION_DOWN) {
-                    WebView webView = (WebView) view;
-
-                    switch (i) {
-                        case KeyEvent.KEYCODE_BACK:
-                            if (webView.canGoBack()) {
-                                webView.goBack();
-                                return true;
-                            }
-                            break;
-                    }
-                }
-
-                return false;
-            }
-        });*/

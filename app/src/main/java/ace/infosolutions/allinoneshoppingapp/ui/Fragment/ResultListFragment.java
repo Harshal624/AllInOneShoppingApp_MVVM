@@ -9,6 +9,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -39,6 +40,7 @@ public class ResultListFragment extends Fragment implements OnWebsiteClickListen
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        viewModel.initTopWebsites();
         binding.recyclerview.setLayoutManager(layoutManager);
         binding.recyclerview.setHasFixedSize(true);
         binding.recyclerview.addItemDecoration(new DividerItemDecoration(getContext(), DividerItemDecoration.VERTICAL));
@@ -59,5 +61,8 @@ public class ResultListFragment extends Fragment implements OnWebsiteClickListen
     @Override
     public void OnClick(Website website) {
         //open the webview here
+        ResultListFragmentDirections.ActionResultListFragmentToWebViewFragment action =
+                ResultListFragmentDirections.actionResultListFragmentToWebViewFragment(website, website.getTitle());
+        Navigation.findNavController(getView()).navigate(action);
     }
 }
