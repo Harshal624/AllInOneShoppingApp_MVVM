@@ -111,78 +111,31 @@
 
             </LinearLayout>
         </androidx.cardview.widget.CardView>
-
         <androidx.cardview.widget.CardView
             android:id="@+id/cv_Bookmarks"
             android:layout_width="match_parent"
-            android:layout_height="100dp"
+            android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/home_side_margin"
             android:layout_marginTop="20dp"
             android:layout_marginEnd="@dimen/home_side_margin"
             android:background="@drawable/custom_border2"
             app:cardCornerRadius="20dp"
-            app:cardElevation="3dp">
+            app:cardElevation="6dp">
 
-            <LinearLayout
+            <TextView
+                android:id="@+id/tv_Bookmarks"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-
-                <TextView
-                    android:id="@+id/tv_Bookmarks"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/custom_textview"
-                    android:gravity="center"
-                    android:padding="10dp"
-                    android:text="Bookmarks"
-                    android:textColor="@color/white"
+                android:background="@drawable/custom_textview"
+                android:gravity="center"
+                android:padding="10dp"
+                android:text="Categories"
+                android:textColor="@color/white"
                     app:layout_constraintTop_toTopOf="parent" />
-
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:paddingTop="@dimen/home_side_margin"
-                    android:paddingBottom="@dimen/home_side_margin">
-
-                    <ImageView
-                        android:id="@+id/iv_Amazonbookmark"
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:src="@drawable/amazonlogo"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintWidth_default="percent"
-                        app:layout_constraintWidth_percent="0.3" />
-
-                    <ImageView
-                        android:id="@+id/iv_Ebaybookmark"
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:src="@drawable/ebaylogo"
-                        app:layout_constraintEnd_toStartOf="@+id/iv_Myntrabookmark"
-                        app:layout_constraintStart_toEndOf="@+id/iv_Amazonbookmark"
-                        app:layout_constraintWidth_default="percent"
-                        app:layout_constraintWidth_percent="0.3"
-                        tools:layout_editor_absoluteY="10dp" />
-
-                    <ImageView
-                        android:id="@+id/iv_Myntrabookmark"
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:src="@drawable/myntralogo"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintWidth_default="percent"
-                        app:layout_constraintWidth_percent="0.3" />
-                </androidx.constraintlayout.widget.ConstraintLayout>
-            </LinearLayout>
 
 
         </androidx.cardview.widget.CardView>
+
 
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"

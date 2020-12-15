@@ -20,8 +20,9 @@ import ace.infosolutions.allinoneshoppingapp.ui.adapter.OnWebsiteClickListener;
 import ace.infosolutions.allinoneshoppingapp.ui.adapter.SiteListRecyclerAdapter;
 import ace.infosolutions.allinoneshoppingapp.viewmodel.ListViewModel;
 
-public class ResultListFragment extends Fragment implements OnWebsiteClickListener {
 
+public class ResultListFragment extends Fragment implements OnWebsiteClickListener {
+    private static final String TAG = "ResultListFragment";
     private FragmentResultlistBinding binding;
     private SiteListRecyclerAdapter adapter;
     private RecyclerView.LayoutManager layoutManager;
@@ -40,16 +41,11 @@ public class ResultListFragment extends Fragment implements OnWebsiteClickListen
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        viewModel.initTopWebsites();
         binding.recyclerview.setLayoutManager(layoutManager);
         binding.recyclerview.setHasFixedSize(true);
         binding.recyclerview.addItemDecoration(new DividerItemDecoration(getContext(), DividerItemDecoration.VERTICAL));
         binding.recyclerview.setAdapter(adapter);
-
-        viewModel.getTopWebSites().observe(getViewLifecycleOwner(), websites -> {
-            adapter.submitList(websites);
-        });
-
+        viewModel.getTopWebsites().observe(getViewLifecycleOwner(), websites -> adapter.submitList(websites));
     }
 
     @Override
@@ -65,4 +61,5 @@ public class ResultListFragment extends Fragment implements OnWebsiteClickListen
                 ResultListFragmentDirections.actionResultListFragmentToWebViewFragment(website, website.getTitle());
         Navigation.findNavController(getView()).navigate(action);
     }
+
 }

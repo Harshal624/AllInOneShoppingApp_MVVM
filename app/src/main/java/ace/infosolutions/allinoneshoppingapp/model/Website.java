@@ -22,16 +22,25 @@ public class Website implements Parcelable {
             return oldItem.equals(newItem);
         }
     };
+
     private String title;
     private int icon;
-    private boolean isaddedtofav;
+    private boolean istopsite;
     private String url;
 
-    public Website(String title, int icon, boolean isaddedtofav, String url) {
+
+    public Website(String title, int icon, boolean istopsite, String url) {
         this.title = title;
         this.icon = icon;
-        this.isaddedtofav = isaddedtofav;
+        this.istopsite = istopsite;
         this.url = url;
+    }
+
+    protected Website(Parcel in) {
+        title = in.readString();
+        icon = in.readInt();
+        istopsite = in.readByte() != 0;
+        url = in.readString();
     }
 
     public static final Creator<Website> CREATOR = new Creator<Website>() {
@@ -46,11 +55,9 @@ public class Website implements Parcelable {
         }
     };
 
-    protected Website(Parcel in) {
-        title = in.readString();
-        icon = in.readInt();
-        isaddedtofav = in.readByte() != 0;
-        url = in.readString();
+    @Override
+    public int hashCode() {
+        return Objects.hash(title, icon, istopsite, url);
     }
 
     public String getTitle() {
@@ -69,12 +76,12 @@ public class Website implements Parcelable {
         this.icon = icon;
     }
 
-    public boolean isIsaddedtofav() {
-        return isaddedtofav;
+    public boolean getIstopsite() {
+        return istopsite;
     }
 
-    public void setIsaddedtofav(boolean isaddedtofav) {
-        this.isaddedtofav = isaddedtofav;
+    public void setIstopsite(boolean istopsite) {
+        this.istopsite = istopsite;
     }
 
     public String getUrl() {
@@ -91,15 +98,10 @@ public class Website implements Parcelable {
         if (o == null || getClass() != o.getClass()) return false;
         Website website = (Website) o;
         return icon == website.icon &&
-                isaddedtofav == website.isaddedtofav &&
                 url.equals(website.url) &&
                 title.equals(website.title);
     }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(title, icon, isaddedtofav, url);
-    }
 
     @Override
     public int describeContents() {
@@ -110,7 +112,7 @@ public class Website implements Parcelable {
     public void writeToParcel(Parcel parcel, int i) {
         parcel.writeString(title);
         parcel.writeInt(icon);
-        parcel.writeByte((byte) (isaddedtofav ? 1 : 0));
+        parcel.writeByte((byte) (istopsite ? 1 : 0));
         parcel.writeString(url);
     }
 }

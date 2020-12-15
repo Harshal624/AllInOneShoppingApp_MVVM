@@ -40,15 +40,11 @@ public class GenShoppingFragment extends Fragment implements OnWebsiteClickListe
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        viewModel.initGenShopWebsites();
         binding.recyclerview.setLayoutManager(layoutManager);
         binding.recyclerview.setHasFixedSize(true);
         binding.recyclerview.addItemDecoration(new DividerItemDecoration(getContext(), DividerItemDecoration.VERTICAL));
         binding.recyclerview.setAdapter(adapter);
 
-        viewModel.getGenShoppingWebsites().observe(getViewLifecycleOwner(), websites -> {
-            adapter.submitList(websites);
-        });
 
     }
 
@@ -62,4 +58,5 @@ public class GenShoppingFragment extends Fragment implements OnWebsiteClickListe
         super.onDestroyView();
         binding = null;
     }
+
 }

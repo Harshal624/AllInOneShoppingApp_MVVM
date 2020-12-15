@@ -11,9 +11,6 @@
         android:label="@string/menu_home"
         tools:layout="@layout/fragment_home">
         <action
-            android:id="@+id/action_nav_home_to_nav_bookmarks"
-            app:destination="@id/nav_bookmarks" />
-        <action
             android:id="@+id/action_nav_home_to_webViewFragment"
             app:destination="@id/webViewFragment" />
         <action
@@ -33,15 +30,6 @@
             app:destination="@id/othersFragment" />
     </fragment>
 
-    <fragment
-        android:id="@+id/nav_bookmarks"
-        android:name="ace.infosolutions.allinoneshoppingapp.ui.Fragment.BookmarkFragment"
-        android:label="Bookmarks"
-        tools:layout="@layout/fragment_bookmark">
-        <action
-            android:id="@+id/action_nav_bookmarks_to_webViewFragment"
-            app:destination="@id/webViewFragment" />
-    </fragment>
     <fragment
         android:id="@+id/webViewFragment"
         android:name="ace.infosolutions.allinoneshoppingapp.ui.Fragment.WebViewFragment"

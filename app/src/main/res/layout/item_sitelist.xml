@@ -44,36 +44,5 @@
         app:layout_constraintWidth_default="percent"
         app:layout_constraintWidth_percent="0.65" />
 
-    <ImageButton
-        android:id="@+id/imgBtn_Star_fav"
-        android:layout_width="25dp"
-        android:layout_height="25dp"
-        android:layout_marginEnd="@dimen/home_side_margin"
-        android:background="@android:color/transparent"
-        android:scaleType="fitXY"
-        android:layout_marginTop="8dp"
-        android:visibility="gone"
-        android:src="@drawable/bookmark_added"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHeight_default="percent"
-        app:layout_constraintHeight_percent="0.4"
-        app:layout_constraintWidth_default="percent"
-        app:layout_constraintWidth_percent="0.25" />
-
-    <ImageButton
-        android:id="@+id/imgBtn_Star"
-        android:layout_width="25dp"
-        android:layout_height="25dp"
-        android:layout_marginEnd="@dimen/home_side_margin"
-        android:background="@android:color/transparent"
-        android:scaleType="fitXY"
-        android:layout_marginTop="8dp"
-        android:src="@drawable/bookmark_notadded"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHeight_default="percent"
-        app:layout_constraintWidth_default="percent" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

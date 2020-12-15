@@ -1,7 +1,6 @@
 package ace.infosolutions.allinoneshoppingapp.ui.adapter;
 
 import android.view.LayoutInflater;
-import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
@@ -19,7 +18,6 @@ public class SiteListRecyclerAdapter extends ListAdapter<Website, SiteListRecycl
     public SiteListRecyclerAdapter(OnWebsiteClickListener listener) {
         super(Website.DIFF_CALLBACK);
         this.listener = listener;
-
     }
 
     @NonNull
@@ -53,18 +51,9 @@ public class SiteListRecyclerAdapter extends ListAdapter<Website, SiteListRecycl
 
         private void bind(Website item) {
             binding.tvTitle.setText(item.getTitle());
-            //binding.civLogo.setImageResource(item.getIcon());
             binding.tvUrl.setText(item.getUrl());
 
             Glide.with(binding.getRoot()).load(item.getIcon()).fitCenter().into(binding.civLogo);
-            if (item.isIsaddedtofav()) {
-                binding.imgBtnStarFav.setVisibility(View.VISIBLE);
-                binding.imgBtnStar.setVisibility(View.GONE);
-            } else {
-                binding.imgBtnStarFav.setVisibility(View.GONE);
-                binding.imgBtnStar.setVisibility(View.VISIBLE);
-
-            }
         }
     }
 }
