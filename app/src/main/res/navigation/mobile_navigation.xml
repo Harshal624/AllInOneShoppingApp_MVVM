@@ -28,6 +28,9 @@
         <action
             android:id="@+id/action_nav_home_to_othersFragment"
             app:destination="@id/othersFragment" />
+        <action
+            android:id="@+id/action_nav_home_to_googleSearchFragment"
+            app:destination="@id/googleSearchFragment" />
     </fragment>
 
     <fragment
@@ -60,7 +63,7 @@
     <fragment
         android:id="@+id/genShoppingFragment"
         android:name="ace.infosolutions.allinoneshoppingapp.ui.Fragment.GenShoppingFragment"
-        android:label="General Shopping"
+        android:label="@string/GeneralShopping"
         tools:layout="@layout/fragment_gen_shopping">
         <action
             android:id="@+id/action_genShoppingFragment_to_webViewFragment"
@@ -69,7 +72,7 @@
     <fragment
         android:id="@+id/fashionFragment"
         android:name="ace.infosolutions.allinoneshoppingapp.ui.Fragment.FashionFragment"
-        android:label="Fashion"
+        android:label="@string/Fashion"
         tools:layout="@layout/fragment_fashion">
         <action
             android:id="@+id/action_fashionFragment_to_webViewFragment"
@@ -87,11 +90,22 @@
     <fragment
         android:id="@+id/othersFragment"
         android:name="ace.infosolutions.allinoneshoppingapp.ui.Fragment.OthersFragment"
-        android:label="Others"
+        android:label="@string/Others"
         tools:layout="@layout/fragment_others">
         <action
             android:id="@+id/action_othersFragment_to_webViewFragment"
             app:destination="@id/webViewFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/googleSearchFragment"
+        android:name="ace.infosolutions.allinoneshoppingapp.ui.Fragment.GoogleSearchFragment"
+        android:label="@string/Result"
+        tools:layout="@layout/fragment_google_search">
+        <argument
+            android:name="url"
+            android:defaultValue="https://www.google.com"
+            app:argType="string"
+            app:nullable="true" />
     </fragment>
 
 </navigation>

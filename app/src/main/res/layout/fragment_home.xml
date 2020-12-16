@@ -14,20 +14,43 @@
         android:focusableInTouchMode="true"
         android:orientation="vertical">
 
-        <EditText
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
             android:layout_marginEnd="20dp"
             android:background="@drawable/custom_edittext"
-            android:drawableStart="@drawable/ic_baseline_search_24"
-            android:drawableEnd="@drawable/ic_baseline_keyboard_voice_24"
-            android:drawablePadding="20dp"
-            android:hint="Search"
-            android:inputType="text"
-            android:maxLines="1"
-            android:padding="10dp"
-            android:queryHint="Search" />
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/editText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@android:color/transparent"
+                android:drawableStart="@drawable/ic_baseline_search_24"
+                android:drawablePadding="20dp"
+                android:hint="Search"
+                android:imeOptions="actionSearch"
+                android:inputType="text"
+                android:maxLines="1"
+                android:padding="10dp"
+                android:queryHint="Search"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageButton
+                android:id="@+id/imgBtn_Voice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:backgroundTint="@android:color/transparent"
+                android:src="@drawable/ic_baseline_keyboard_voice_24"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
 
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"

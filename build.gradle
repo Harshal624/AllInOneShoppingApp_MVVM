@@ -21,3 +21,10 @@ allprojects {
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
+
+ext{
+    lifecycle_version = "2.2.0"
+    dexter_version = "6.2.2"
+    glide_version = "4.11.0"
+    lottie_version = "3.5.0"
+}

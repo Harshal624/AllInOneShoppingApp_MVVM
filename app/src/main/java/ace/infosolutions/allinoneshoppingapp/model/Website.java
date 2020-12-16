@@ -22,12 +22,21 @@ public class Website implements Parcelable {
             return oldItem.equals(newItem);
         }
     };
+    public static final Creator<Website> CREATOR = new Creator<Website>() {
+        @Override
+        public Website createFromParcel(Parcel in) {
+            return new Website(in);
+        }
 
+        @Override
+        public Website[] newArray(int size) {
+            return new Website[size];
+        }
+    };
     private String title;
     private int icon;
     private boolean istopsite;
     private String url;
-
 
     public Website(String title, int icon, boolean istopsite, String url) {
         this.title = title;
@@ -42,18 +51,6 @@ public class Website implements Parcelable {
         istopsite = in.readByte() != 0;
         url = in.readString();
     }
-
-    public static final Creator<Website> CREATOR = new Creator<Website>() {
-        @Override
-        public Website createFromParcel(Parcel in) {
-            return new Website(in);
-        }
-
-        @Override
-        public Website[] newArray(int size) {
-            return new Website[size];
-        }
-    };
 
     @Override
     public int hashCode() {
