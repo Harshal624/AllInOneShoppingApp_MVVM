@@ -8,14 +8,11 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
-import java.util.List;
 
 import ace.infosolutions.allinoneshoppingapp.databinding.FragmentGenShoppingBinding;
 import ace.infosolutions.allinoneshoppingapp.model.Website;
@@ -49,12 +46,7 @@ public class GenShoppingFragment extends Fragment implements OnWebsiteClickListe
         binding.recyclerview.addItemDecoration(new DividerItemDecoration(getContext(), DividerItemDecoration.VERTICAL));
         binding.recyclerview.setAdapter(adapter);
 
-        viewModel.getGeneralShoppingWebsites().observe(getViewLifecycleOwner(), new Observer<List<Website>>() {
-            @Override
-            public void onChanged(List<Website> websites) {
-                adapter.submitList(websites);
-            }
-        });
+        viewModel.getGeneralShoppingWebsites().observe(getViewLifecycleOwner(), websites -> adapter.submitList(websites));
 
 
     }
