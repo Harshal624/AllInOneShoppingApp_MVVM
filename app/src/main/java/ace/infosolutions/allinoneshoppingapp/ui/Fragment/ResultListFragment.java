@@ -59,7 +59,7 @@ public class ResultListFragment extends Fragment implements OnWebsiteClickListen
         //open the webview here
         ResultListFragmentDirections.ActionResultListFragmentToWebViewFragment action =
                 ResultListFragmentDirections.actionResultListFragmentToWebViewFragment(website, website.getTitle());
-        Navigation.findNavController(getView()).navigate(action);
+        Navigation.findNavController(binding.getRoot()).navigate(action);
     }
 
 }

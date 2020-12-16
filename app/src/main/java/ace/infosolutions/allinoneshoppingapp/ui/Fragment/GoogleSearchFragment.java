@@ -60,6 +60,5 @@ public class GoogleSearchFragment extends Fragment {
     public void onDestroyView() {
         super.onDestroyView();
         binding = null;
-        binding.webview.destroy();
     }
 }

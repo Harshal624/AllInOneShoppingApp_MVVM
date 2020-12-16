@@ -75,7 +75,12 @@ public class HomeFragment extends Fragment {
 
 
         binding.editText.setOnEditorActionListener((textView, i, keyEvent) -> {
-            String inputString = binding.editText.getText().toString().trim();
+            String inputString = null;
+            try {
+                inputString = binding.editText.getText().toString().trim();
+            } catch (NullPointerException e) {
+                inputString = "";
+            }
 
             if (i == EditorInfo.IME_ACTION_SEARCH && !inputString.equals("")) {
                 performSearch(binding.editText.getText().toString().trim());

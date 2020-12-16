@@ -21,5 +21,21 @@ public class ListViewModel extends ViewModel {
         return repo.getTopWebSites();
     }
 
+    public LiveData<List<Website>> getGeneralShoppingWebsites() {
+        return repo.getGenShoppingWebsites();
+    }
+
+    public LiveData<List<Website>> getFashionWesites() {
+        return repo.getFashionWebsites();
+    }
+
+    public LiveData<List<Website>> getGrocFoodWebsites() {
+        return repo.getGrocFoodWebsites();
+    }
+
+    public LiveData<List<Website>> getOtherWebsites() {
+        return repo.getOtherWebsites();
+    }
+
 
 }
