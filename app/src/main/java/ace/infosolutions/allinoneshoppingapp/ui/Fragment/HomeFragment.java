@@ -20,12 +20,11 @@ import android.widget.Toast;
 import androidx.activity.OnBackPressedCallback;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 
-import com.bumptech.glide.Glide;
+import com.bumptech.glide.RequestManager;
 import com.google.android.material.snackbar.Snackbar;
 import com.karumi.dexter.Dexter;
 import com.karumi.dexter.PermissionToken;
@@ -37,10 +36,13 @@ import com.karumi.dexter.listener.single.PermissionListener;
 import java.util.ArrayList;
 import java.util.Locale;
 
+import javax.inject.Inject;
+
 import ace.infosolutions.allinoneshoppingapp.BuildConfig;
 import ace.infosolutions.allinoneshoppingapp.R;
 import ace.infosolutions.allinoneshoppingapp.databinding.FragmentHomeBinding;
 import ace.infosolutions.allinoneshoppingapp.viewmodel.HomeViewModel;
+import dagger.android.support.DaggerFragment;
 
 import static ace.infosolutions.allinoneshoppingapp.utils.Constants.AMAZONDAILYDEALS_URL;
 import static ace.infosolutions.allinoneshoppingapp.utils.Constants.AMAZON_URL;
@@ -61,11 +63,13 @@ import static ace.infosolutions.allinoneshoppingapp.utils.Constants.SWIGGY_URL;
 import static ace.infosolutions.allinoneshoppingapp.utils.Constants.WISH_URL;
 import static android.app.Activity.RESULT_OK;
 
-public class HomeFragment extends Fragment {
+public class HomeFragment extends DaggerFragment {
 
+    private static final String TAG = "HomeFragment";
+    @Inject
+    RequestManager requestManager;
     private HomeViewModel homeViewModel;
     private FragmentHomeBinding binding;
-
     OnBackPressedCallback onBackPressedCallback = new OnBackPressedCallback(true) {
         @Override
         public void handleOnBackPressed() {
@@ -95,7 +99,7 @@ public class HomeFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        loadImages(view);
+        loadImages();
         mNavController = Navigation.findNavController(binding.getRoot());
         binding.editText.setOnEditorActionListener((textView, i, keyEvent) -> {
             String inputString = null;
@@ -236,24 +240,20 @@ public class HomeFragment extends Fragment {
     }
 
 
-    private void loadImages(View view) {
-        Glide.with(view).load(R.drawable.shoppersstoplogo).into(binding.ivShoppersStopOthers);
-        Glide.with(view).load(R.drawable.samsunglogo).into(binding.ivSamsungOthers);
-        Glide.with(view).load(R.drawable.wishlogo).into(binding.ivWishOthers);
-
-        Glide.with(view).load(R.drawable.liciouslogo).into(binding.ivLiciousGrocFood);
-        Glide.with(view).load(R.drawable.swiggylogo).into(binding.ivSwiggyGrocFood);
-        Glide.with(view).load(R.drawable.kfclogo).into(binding.ivKFCGrocFood);
-
-        Glide.with(view).load(R.drawable.amazondailydealslogo).centerCrop().into(binding.tvAmazonDailyDeals);
-
-        Glide.with(view).load(R.drawable.amazonlogo).into(binding.ivAmazonGenShopping);
-        Glide.with(view).load(R.drawable.flipkartlogo).into(binding.ivFlipkartGenShopping);
-        Glide.with(view).load(R.drawable.snapdeallogo).into(binding.ivSnapdealGenShopping);
-
-        Glide.with(view).load(R.drawable.myntralogo).into(binding.ivMyntraaFashion);
-        Glide.with(view).load(R.drawable.nykaalogo).into(binding.ivNykaaFashion);
-        Glide.with(view).load(R.drawable.limeroadlogo).into(binding.ivLimeRoadFashion);
+    private void loadImages() {
+        requestManager.load(R.drawable.shoppersstoplogo).into(binding.ivShoppersStopOthers);
+        requestManager.load(R.drawable.samsunglogo).into(binding.ivSamsungOthers);
+        requestManager.load(R.drawable.wishlogo).into(binding.ivWishOthers);
+        requestManager.load(R.drawable.liciouslogo).into(binding.ivLiciousGrocFood);
+        requestManager.load(R.drawable.swiggylogo).into(binding.ivSwiggyGrocFood);
+        requestManager.load(R.drawable.kfclogo).into(binding.ivKFCGrocFood);
+        requestManager.load(R.drawable.amazondailydealslogo).centerCrop().into(binding.tvAmazonDailyDeals);
+        requestManager.load(R.drawable.amazonlogo).into(binding.ivAmazonGenShopping);
+        requestManager.load(R.drawable.flipkartlogo).into(binding.ivFlipkartGenShopping);
+        requestManager.load(R.drawable.snapdeallogo).into(binding.ivSnapdealGenShopping);
+        requestManager.load(R.drawable.myntralogo).into(binding.ivMyntraaFashion);
+        requestManager.load(R.drawable.nykaalogo).into(binding.ivNykaaFashion);
+        requestManager.load(R.drawable.limeroadlogo).into(binding.ivLimeRoadFashion);
     }
 
     @Override
@@ -333,7 +333,6 @@ public class HomeFragment extends Fragment {
         if (Build.VERSION.SDK_INT >= 21) {
             flags |= Intent.FLAG_ACTIVITY_NEW_DOCUMENT;
         } else {
-            //noinspection deprecation
             flags |= Intent.FLAG_ACTIVITY_CLEAR_WHEN_TASK_RESET;
         }
         intent.addFlags(flags);
