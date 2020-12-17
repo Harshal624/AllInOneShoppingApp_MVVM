@@ -2,6 +2,8 @@
 
 This is a simple android app requested by a client which contains almost all of the shopping websites available in India. 
 It will be available on the play store real soon ->  
+
+
 https://play.google.com/store/apps/details?id=ace.infosolutions.allinoneshoppingapp
 
 
