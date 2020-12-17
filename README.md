@@ -13,5 +13,6 @@ This is a simple android app requested by a client which contains almost all of 
   <li>Dagger2</li>
   <li>Glide</li>
   <li>Lottie</li>
+  <li>SafeArgs</li>
   
 </ul>  
