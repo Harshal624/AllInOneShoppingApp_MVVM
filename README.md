@@ -2,7 +2,6 @@
 
 This is a simple android app requested by a client which contains almost all of the shopping websites available in India. 
 
-<hr></hr>
 
 <h2>Implemented using</h2>
 
