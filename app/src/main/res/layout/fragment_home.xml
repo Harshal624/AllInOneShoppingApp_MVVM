@@ -2,6 +2,7 @@
 <androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nscrollview"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
 
@@ -12,8 +13,8 @@
         android:layout_height="wrap_content"
         android:focusable="true"
         android:focusableInTouchMode="true"
-        android:paddingTop="20dp"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:paddingTop="20dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -136,8 +137,9 @@
 
             </LinearLayout>
         </androidx.cardview.widget.CardView>
+
         <androidx.cardview.widget.CardView
-            android:id="@+id/cv_Bookmarks"
+            android:id="@+id/cv_Categories"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/home_side_margin"
@@ -156,7 +158,7 @@
                 android:padding="10dp"
                 android:text="Categories"
                 android:textColor="@color/white"
-                    app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent" />
 
 
         </androidx.cardview.widget.CardView>
@@ -374,12 +376,12 @@
                             android:id="@+id/iv_NykaaFashion"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
-                            app:layout_constraintEnd_toStartOf="@+id/iv_TataCliqFashion"
+                            app:layout_constraintEnd_toStartOf="@+id/iv_ZaraFashion"
                             app:layout_constraintStart_toEndOf="@+id/iv_MyntraaFashion"
                             app:layout_constraintWidth_percent="0.3" />
 
                         <ImageView
-                            android:id="@+id/iv_TataCliqFashion"
+                            android:id="@+id/ivLimeRoadFashion"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_marginEnd="5dp"

@@ -31,6 +31,9 @@
         <action
             android:id="@+id/action_nav_home_to_googleSearchFragment"
             app:destination="@id/googleSearchFragment" />
+        <action
+            android:id="@+id/action_nav_home_to_anotherWebView"
+            app:destination="@id/anotherWebView" />
     </fragment>
 
     <fragment
@@ -106,6 +109,18 @@
             android:defaultValue="https://www.google.com"
             app:argType="string"
             app:nullable="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/anotherWebView"
+        android:name="ace.infosolutions.allinoneshoppingapp.ui.Fragment.AnotherWebView"
+        android:label="{title}"
+        tools:layout="@layout/fragment_another_web_view">
+        <argument
+            android:name="title"
+            android:defaultValue="Result" />
+        <argument
+            android:name="url"
+            app:argType="string" />
     </fragment>
 
 </navigation>
