@@ -4,11 +4,13 @@ import android.annotation.SuppressLint;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import androidx.annotation.Keep;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.DiffUtil;
 
 import java.util.Objects;
 
+@Keep
 public class Website implements Parcelable {
     public static final DiffUtil.ItemCallback<Website> DIFF_CALLBACK = new DiffUtil.ItemCallback<Website>() {
         @Override

@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.webkit.WebViewClient;
 
 import androidx.activity.OnBackPressedCallback;
 import androidx.annotation.NonNull;
@@ -14,6 +13,7 @@ import androidx.fragment.app.Fragment;
 
 import ace.infosolutions.allinoneshoppingapp.databinding.FragmentWebViewBinding;
 import ace.infosolutions.allinoneshoppingapp.model.Website;
+import ace.infosolutions.allinoneshoppingapp.utils.CustomWebviewClient;
 
 
 public class WebViewFragment extends Fragment {
@@ -53,8 +53,12 @@ public class WebViewFragment extends Fragment {
     @SuppressLint("SetJavaScriptEnabled")
     private void loadWebSite(Website website) {
         binding.webview.getSettings().setJavaScriptEnabled(true);
+        binding.webview.setScrollBarStyle(View.SCROLLBARS_OUTSIDE_OVERLAY);
+        binding.webview.getSettings().setBuiltInZoomControls(true);
+        binding.webview.getSettings().setUseWideViewPort(true);
+        binding.webview.getSettings().setLoadWithOverviewMode(true);
+        binding.webview.setWebViewClient(new CustomWebviewClient(binding.lottieanim));
         binding.webview.loadUrl(website.getUrl());
-        binding.webview.setWebViewClient(new WebViewClient());
     }
 
     @Override

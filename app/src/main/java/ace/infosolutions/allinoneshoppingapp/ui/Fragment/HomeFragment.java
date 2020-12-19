@@ -20,11 +20,12 @@ import android.widget.Toast;
 import androidx.activity.OnBackPressedCallback;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.lifecycle.ViewModelProvider;
+import androidx.appcompat.widget.Toolbar;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 
 import com.bumptech.glide.RequestManager;
+import com.google.android.material.appbar.AppBarLayout;
 import com.google.android.material.snackbar.Snackbar;
 import com.karumi.dexter.Dexter;
 import com.karumi.dexter.PermissionToken;
@@ -41,7 +42,7 @@ import javax.inject.Inject;
 import ace.infosolutions.allinoneshoppingapp.BuildConfig;
 import ace.infosolutions.allinoneshoppingapp.R;
 import ace.infosolutions.allinoneshoppingapp.databinding.FragmentHomeBinding;
-import ace.infosolutions.allinoneshoppingapp.viewmodel.HomeViewModel;
+import ace.infosolutions.allinoneshoppingapp.ui.Activity.MainActivity;
 import dagger.android.support.DaggerFragment;
 
 import static ace.infosolutions.allinoneshoppingapp.utils.Constants.AMAZONDAILYDEALS_URL;
@@ -68,7 +69,6 @@ public class HomeFragment extends DaggerFragment {
     private static final String TAG = "HomeFragment";
     @Inject
     RequestManager requestManager;
-    private HomeViewModel homeViewModel;
     private FragmentHomeBinding binding;
     OnBackPressedCallback onBackPressedCallback = new OnBackPressedCallback(true) {
         @Override
@@ -86,11 +86,10 @@ public class HomeFragment extends DaggerFragment {
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         binding = FragmentHomeBinding.inflate(inflater, container, false);
-        homeViewModel =
-                new ViewModelProvider(this).get(HomeViewModel.class);
-        homeViewModel.getText().observe(getViewLifecycleOwner(), s -> {
-        });
-
+        Toolbar toolbar = ((MainActivity) getActivity()).toolbar;
+        AppBarLayout.LayoutParams params =
+                (AppBarLayout.LayoutParams) toolbar.getLayoutParams();
+        params.setScrollFlags(AppBarLayout.LayoutParams.SCROLL_FLAG_NO_SCROLL);
         requireActivity().getOnBackPressedDispatcher().addCallback(getViewLifecycleOwner(), onBackPressedCallback);
         setHasOptionsMenu(true);
         return binding.getRoot();
@@ -125,9 +124,10 @@ public class HomeFragment extends DaggerFragment {
                         initRecordVoice();
                     }
 
+
                     @Override
                     public void onPermissionDenied(PermissionDeniedResponse permissionDeniedResponse) {
-                        Snackbar.make(requireView(), "Denied", Snackbar.LENGTH_SHORT).show();
+                        Snackbar.make(requireView(), "Permission denied", Snackbar.LENGTH_SHORT).show();
                     }
 
                     @Override
@@ -332,10 +332,8 @@ public class HomeFragment extends DaggerFragment {
         int flags = Intent.FLAG_ACTIVITY_NO_HISTORY | Intent.FLAG_ACTIVITY_MULTIPLE_TASK;
         if (Build.VERSION.SDK_INT >= 21) {
             flags |= Intent.FLAG_ACTIVITY_NEW_DOCUMENT;
-        } else {
-            flags |= Intent.FLAG_ACTIVITY_CLEAR_WHEN_TASK_RESET;
+            intent.addFlags(flags);
         }
-        intent.addFlags(flags);
         return intent;
     }
 

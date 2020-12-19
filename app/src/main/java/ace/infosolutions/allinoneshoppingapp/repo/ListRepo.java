@@ -26,11 +26,11 @@ import static ace.infosolutions.allinoneshoppingapp.utils.Constants.WISH_URL;
 
 public class ListRepo implements WebsiteRepository {
     private static final String TAG = "ListRepo";
-    private MutableLiveData<List<Website>> mTopwebsiteMLD = new MutableLiveData<>();
-    private MutableLiveData<List<Website>> mGenShoppingMLD = new MutableLiveData<>();
-    private MutableLiveData<List<Website>> mFashionMLD = new MutableLiveData<>();
-    private MutableLiveData<List<Website>> mGrocFoodMLD = new MutableLiveData<>();
-    private MutableLiveData<List<Website>> mOthersMLD = new MutableLiveData<>();
+    private final MutableLiveData<List<Website>> mTopwebsiteMLD = new MutableLiveData<>();
+    private final MutableLiveData<List<Website>> mGenShoppingMLD = new MutableLiveData<>();
+    private final MutableLiveData<List<Website>> mFashionMLD = new MutableLiveData<>();
+    private final MutableLiveData<List<Website>> mGrocFoodMLD = new MutableLiveData<>();
+    private final MutableLiveData<List<Website>> mOthersMLD = new MutableLiveData<>();
     private static ListRepo instance;
 
     ListRepo() {

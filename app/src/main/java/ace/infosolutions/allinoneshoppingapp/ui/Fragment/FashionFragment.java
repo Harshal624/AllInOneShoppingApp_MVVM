@@ -11,8 +11,7 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.Navigation;
-import androidx.recyclerview.widget.DividerItemDecoration;
-import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
@@ -33,7 +32,8 @@ public class FashionFragment extends Fragment implements OnWebsiteClickListener 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         binding = FragmentFashionBinding.inflate(inflater, container, false);
-        layoutManager = new LinearLayoutManager(getContext());
+        //layoutManager = new LinearLayoutManager(getContext());
+        layoutManager = new GridLayoutManager(getContext(), 2);
         viewModel = new ViewModelProvider(requireActivity()).get(ListViewModel.class);
         adapter = new SiteListRecyclerAdapter(this);
         return binding.getRoot();
@@ -44,7 +44,7 @@ public class FashionFragment extends Fragment implements OnWebsiteClickListener 
         super.onViewCreated(view, savedInstanceState);
         binding.recyclerview.setLayoutManager(layoutManager);
         binding.recyclerview.setHasFixedSize(true);
-        binding.recyclerview.addItemDecoration(new DividerItemDecoration(requireContext(), DividerItemDecoration.VERTICAL));
+        //   binding.recyclerview.addItemDecoration(new DividerItemDecoration(requireContext(), DividerItemDecoration.VERTICAL));
         binding.recyclerview.setAdapter(adapter);
 
         viewModel.getFashionWesites().observe(getViewLifecycleOwner(), new Observer<List<Website>>() {

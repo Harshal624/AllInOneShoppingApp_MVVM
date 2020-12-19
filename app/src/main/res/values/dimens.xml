@@ -7,4 +7,5 @@
     <dimen name="fab_margin">16dp</dimen>
     <dimen name="home_side_margin">10dp</dimen>
     <dimen name="lottieanim_size">85dp</dimen>
+    <dimen name="gridmargin">25dp</dimen>
 </resources>

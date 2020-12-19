@@ -9,4 +9,9 @@
     <color name="white">#FFFFFFFF</color>
     <color name="app_blue_color">#0063F8</color>
     <color name="app_green_color">#6BDB4F</color>
+    <color name="transparent">#0000ffff</color>
+    <color name="greyeish_white">#F8F8F8</color>
+    <color name="fashion_pink">#ff64b6</color>
+    <color name="grocery_brown">#a44d08</color>
+    <color name="others_purple">#7f58af</color>
 </resources>

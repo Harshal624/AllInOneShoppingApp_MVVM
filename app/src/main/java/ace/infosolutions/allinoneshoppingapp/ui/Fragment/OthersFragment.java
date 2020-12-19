@@ -10,8 +10,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.Navigation;
-import androidx.recyclerview.widget.DividerItemDecoration;
-import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import ace.infosolutions.allinoneshoppingapp.databinding.FragmentOthersBinding;
@@ -32,7 +31,8 @@ public class OthersFragment extends Fragment implements OnWebsiteClickListener {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         binding = FragmentOthersBinding.inflate(inflater, container, false);
-        layoutManager = new LinearLayoutManager(getContext());
+        // layoutManager = new LinearLayoutManager(getContext());
+        layoutManager = new GridLayoutManager(getContext(), 2);
         viewModel = new ViewModelProvider(requireActivity()).get(ListViewModel.class);
         adapter = new SiteListRecyclerAdapter(this);
         return binding.getRoot();
@@ -44,7 +44,7 @@ public class OthersFragment extends Fragment implements OnWebsiteClickListener {
 
         binding.recyclerview.setLayoutManager(layoutManager);
         binding.recyclerview.setHasFixedSize(true);
-        binding.recyclerview.addItemDecoration(new DividerItemDecoration(getContext(), DividerItemDecoration.VERTICAL));
+        //   binding.recyclerview.addItemDecoration(new DividerItemDecoration(getContext(), DividerItemDecoration.VERTICAL));
         binding.recyclerview.setAdapter(adapter);
 
         viewModel.getOtherWebsites().observe(getViewLifecycleOwner(), websites -> adapter.submitList(websites));

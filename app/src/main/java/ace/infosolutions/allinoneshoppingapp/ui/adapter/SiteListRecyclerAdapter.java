@@ -51,8 +51,6 @@ public class SiteListRecyclerAdapter extends ListAdapter<Website, SiteListRecycl
 
         private void bind(Website item) {
             binding.tvTitle.setText(item.getTitle());
-            binding.tvUrl.setText(item.getUrl());
-
             Glide.with(binding.getRoot()).load(item.getIcon()).fitCenter().into(binding.civLogo);
         }
     }

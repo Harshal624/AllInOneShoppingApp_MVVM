@@ -23,4 +23,5 @@
 
     <style name="Theme.AllInOneShoppingApp.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
+
 </resources>
